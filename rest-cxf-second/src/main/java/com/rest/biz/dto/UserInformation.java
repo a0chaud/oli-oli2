@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlElement;
 
 @SuppressWarnings("restriction")
 @XmlRootElement(name="userInformation")
-@XmlType(propOrder={"userId", "userName", "userPhone","userAge","userEmail"})
+@XmlType(propOrder={"userId", "userName", "userPhone","userAge","userEmail","userAddress"})
 public class UserInformation {
 
 	String userId;
@@ -14,6 +14,7 @@ public class UserInformation {
 	String userPhone;
 	String userAge;
 	String userEmail;
+	String userAddress;
 	
 	@XmlElement(name="userid")
 	public String getUserId() {
@@ -55,16 +56,25 @@ public class UserInformation {
 		this.userEmail = userEmail;
 	}
 	
+	@XmlElement(name="userAddress")
+	public String getUserAddress() {
+		return userAddress;
+	}
+	public void setUserAddress(String userAddress) {
+		this.userAddress = userAddress;
+	}
+	
 	@Override
 	public String toString() {
 		return "UserInformation [userId=" + userId + ", userName=" + userName + ", userPhone=" + userPhone
-				+ ", userAge=" + userAge + ", userEmail=" + userEmail + "]";
+				+ ", userAge=" + userAge + ", userEmail=" + userEmail + ", userAddress=" + userAddress + "]";
 	}
 	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((userAddress == null) ? 0 : userAddress.hashCode());
 		result = prime * result + ((userAge == null) ? 0 : userAge.hashCode());
 		result = prime * result + ((userEmail == null) ? 0 : userEmail.hashCode());
 		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
@@ -82,6 +92,11 @@ public class UserInformation {
 		if (getClass() != obj.getClass())
 			return false;
 		UserInformation other = (UserInformation) obj;
+		if (userAddress == null) {
+			if (other.userAddress != null)
+				return false;
+		} else if (!userAddress.equals(other.userAddress))
+			return false;
 		if (userAge == null) {
 			if (other.userAge != null)
 				return false;

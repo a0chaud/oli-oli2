@@ -23,6 +23,7 @@ public class ProcessUserInformationImpl implements ProcessUserInformation {
 		userInfo.setUserEmail("a@xyz.com");
 		userInfo.setUserAge("none");
 		userInfo.setUserPhone("123-234-3456");
+		userInfo.setUserAddress("SunnyvaleCA");
 		return Response.ok(userInfo).build();
 	}
 
@@ -34,6 +35,12 @@ public class ProcessUserInformationImpl implements ProcessUserInformation {
 		userInfo.setUserEmail("a@xyz.com");
 		userInfo.setUserAge("none");
 		userInfo.setUserPhone("123-234-3456");
+		userInfo.setUserAddress("SunnyvaleCA");
 		return Response.ok(userInfo).build();
+	}
+
+	public String testEndPoint() {
+		// TODO Auto-generated method stub
+		return "testEndPoint";
 	}
 }

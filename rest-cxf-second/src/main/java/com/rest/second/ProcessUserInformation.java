@@ -23,4 +23,9 @@ public interface ProcessUserInformation {
 	@Path("/userInformationXml")
 	public Response getUserInformationX();
 
+	@GET
+	@Produces(MediaType.TEXT_HTML)
+	@Path("/testEndPoint")
+	public String testEndPoint();
+
 }
