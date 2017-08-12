@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="h2homeSchema" version="1.5">
+<fields> 
+	<field name="homeid" type="string" indexed="true" stored="true" required="true"/>
+	<field name="zipcode" type="string" indexed="true" stored="true" required="true"/>
+	<field name="price" type="string" indexed="true" stored="true" required="true"/>
+	<field name="sqfeet" type="string" indexed="true" stored="true" required="true"/>
+	<field name="hometype" type="string" indexed="true" stored="true" required="true"/>	
+	<field name="k6shcoolpoint" type="string" indexed="true" stored="true" required="true"/>
+	<field name="kto6shcoolpoint" type="string" indexed="true" stored="true" required="true"/>
+	<field name="7to9shcoolpoint" type="string" indexed="true" stored="true" required="true"/>
+	<field name="10to12shcoolpoint" type="string" indexed="true" stored="true" required="true"/>
+	<field name="_version_" type="long" indexed="false" stored="true"/>
+</fields>
+<uniqueKey>homeid</uniqueKey>
+<types>
+     <fieldType name="string" class="solr.StrField" />
+     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" />
+     <fieldType name="booleans" class="solr.BoolField" sortMissingLast="true" omitNorms="true"/>      
+     <fieldType name="long" class="solr.TrieLongField" docValues="true" precisionStep="0" positionIncrementGap="0" />     
+</types>
+</schema>
