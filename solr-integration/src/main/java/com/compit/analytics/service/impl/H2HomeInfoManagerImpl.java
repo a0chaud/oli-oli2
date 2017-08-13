@@ -27,13 +27,15 @@ public class H2HomeInfoManagerImpl implements H2HomeInfoManager {
 	}
 
 	@Override
-	public List<H2HomeDTO> searchHome(String zipcode) {
+	public List<H2HomeDTO> searchHome(String zipCode) {
 		// TODO Auto-generated method stub
 		List<H2HomeDTO> h2Homes = new ArrayList<H2HomeDTO>();
 		
-		String query = "zipcode="+zipcode;
+		String query = "zipcode:"+zipCode;
 		
-		h2Homes.add(h2HomeDomainManagerImpl.search(query));
+		h2Homes = h2HomeDomainManagerImpl.search(query);
+		
+		//System.out.println(h2Homes);
 		
 		return h2Homes;
 	}
@@ -42,6 +44,12 @@ public class H2HomeInfoManagerImpl implements H2HomeInfoManager {
 	public String welcome() {
 		// TODO Auto-generated method stub
 		return "Welcome to Housing market analytics";
+	}
+
+	@Override
+	public List<H2HomeDTO> searchHomeFiql(String query) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

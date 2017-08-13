@@ -12,7 +12,7 @@
 	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
 	<context:component-scan base-package="com.compit.analytics.*"></context:component-scan>
 
-	<jaxrs:server id="solrIntegration">
+	<jaxrs:server id="solrIntegration" address="/">
 		
 		<jaxrs:providers>
 			<bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider" />

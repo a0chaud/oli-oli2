@@ -21,11 +21,18 @@ public interface H2HomeInfoManager {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String updateHome(H2HomeDTO h2homeDto);
 	
+	//To search using zipcode
 	@GET
-	@Path("/search/{zipcode}")
+	@Path("/search/zipcode")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<H2HomeDTO> searchHome(@QueryParam("zipcode") String zipcode);
-	
+	public List<H2HomeDTO> searchHome(@QueryParam("query") String zipCode);
+
+	//To search using fiql
+	@GET
+	@Path("/search")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<H2HomeDTO> searchHomeFiql(@QueryParam("query") String query);
+
 	@GET
 	@Path("/welcome")
 	@Produces(MediaType.TEXT_PLAIN)
