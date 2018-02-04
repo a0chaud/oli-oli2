@@ -75,4 +75,24 @@ public class H2HomeDomainManagerImpl implements H2HomeDomainManager {
 		return h2HomeDTOList;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.compit.analytics.domain.api.H2HomeDomainManager#delete(java.lang.String)
+	 */
+	public void deleteById(String solrQuery) {
+		// TODO Auto-generated method stub
+		//System.out.println(query);
+
+		List<H2HomeDTO> h2HomeDTOList = new ArrayList<H2HomeDTO>();
+		//System.out.println(solrQuery);
+		try {
+
+			h2HomeDomainDao.getSolrClient().deleteByQuery(solrQuery);
+			h2HomeDomainDao.getSolrClient().commit();
+
+		} catch (SolrServerException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 }

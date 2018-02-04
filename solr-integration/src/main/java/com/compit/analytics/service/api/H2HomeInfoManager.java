@@ -21,6 +21,12 @@ public interface H2HomeInfoManager {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String updateHome(H2HomeDTO h2homeDto);
 	
+	@POST
+	@Path("/delete")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.TEXT_PLAIN)
+	public String deleteHomeById(String homeId);
+
 	//To search using zipcode
 	@GET
 	@Path("/search/zipcode")

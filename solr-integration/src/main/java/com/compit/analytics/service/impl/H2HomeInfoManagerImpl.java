@@ -52,4 +52,15 @@ public class H2HomeInfoManagerImpl implements H2HomeInfoManager {
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.compit.analytics.service.api.H2HomeInfoManager#deleteHomeById(com.compit.analytics.common.H2HomeDTO)
+	 */
+	public String deleteHomeById(String homeId) {
+		// TODO Auto-generated method stub
+		String query = "homeid:"+homeId;
+		h2HomeDomainManagerImpl.deleteById(query);
+
+		return null;
+	}
+
 }

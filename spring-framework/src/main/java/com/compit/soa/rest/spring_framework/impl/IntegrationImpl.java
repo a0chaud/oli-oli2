@@ -1,6 +1,9 @@
 package com.compit.soa.rest.spring_framework.impl;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+
 import com.compit.soa.rest.spring_framework.api.Integration;
 
 /**
@@ -8,7 +11,9 @@ import com.compit.soa.rest.spring_framework.api.Integration;
  * @date:	Sep 16, 2017
  * 
  */
-@Controller
+//@Service
+//@Controller
+@Component
 public class IntegrationImpl implements Integration {
 
 	/* (non-Javadoc)

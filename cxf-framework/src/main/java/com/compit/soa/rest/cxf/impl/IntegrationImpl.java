@@ -3,14 +3,15 @@ package com.compit.soa.rest.cxf.impl;
 import com.compit.soa.rest.cxf.api.Integration;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Controller;
 /**
  * @author: chaudharimehul
  * @date:	Sep 16, 2017
  * 
  */
  //@Component
- @Service
- //@Controller
+ //@Service
+ @Controller
 public class IntegrationImpl implements Integration {
 
 	/* (non-Javadoc)
